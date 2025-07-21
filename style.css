@@ -1,0 +1,249 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* Using Quicksand for a bold, rounded feel */
+            font-family: 'Quicksand', sans-serif;
+
+        }
+
+        body {
+            background: #f4f5f7;
+        }
+
+        /* --- Header & Navbar --- */
+        header {
+            /* Cyan and Orange gradient */
+            background: linear-gradient(90deg, #00BCD4, #FF9800);
+            color: white;
+            padding: 15px 20px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            /* Allows items to wrap on smaller screens if needed */
+        }
+
+        .logo {
+            font-size: 28px;
+            /* Slightly larger for impact */
+            font-weight: bold;
+            font-family: "Luckiest Guy", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            /* Increased gap for cleaner look */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            /* Bolder navigation links */
+            transition: color 0.3s;
+            padding: 5px 0;
+            /* Add some padding for better click area */
+        }
+
+        nav a:hover {
+            color: #333;
+            /* Darker hover for contrast */
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        .search-bar {
+            margin-top: 15px;
+            /* More space below nav */
+            width: 100%;
+            max-width: 450px;
+            /* Slightly wider search bar */
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 12px 18px;
+            /* Larger padding for input */
+            border: none;
+            border-radius: 25px;
+            /* More rounded search input */
+            outline: none;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Slightly transparent white */
+            color: #333;
+        }
+
+        /* --- Products --- */
+        .container {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            /* Slightly larger min-width for cards */
+            gap: 30px;
+            /* Increased gap between cards */
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            /* More rounded cards */
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            /* Softer, larger shadow */
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            /* More pronounced lift on hover */
+            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 220px;
+            /* Slightly taller images */
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+            /* More padding inside product info */
+        }
+
+        .product-info h3 {
+            font-size: 20px;
+            /* Larger product titles */
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .product-info p {
+            font-size: 15px;
+            /* Slightly larger description font */
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .price-rating {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            color: #E91E63;
+            /* Retained pink for price, as it contrasts well */
+            font-weight: bold;
+            font-size: 18px;
+            /* Larger price font */
+        }
+
+        .rating {
+            color: #fbc02d;
+            font-size: 16px;
+            /* Slightly larger rating font */
+        }
+
+        .add-to-cart {
+            margin-top: 15px;
+            background: linear-gradient(to right, #00BCD4, #FF9800);
+            /* Cyan and Orange for cart button */
+            border: none;
+            color: white;
+            padding: 12px;
+            /* Larger padding for button */
+            width: 100%;
+            font-size: 16px;
+            /* Larger font for button */
+            border-radius: 8px;
+            /* More rounded button */
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background: linear-gradient(to right, #00ACC1, #FB8C00);
+            /* Slightly darker hover */
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #2e2e2e;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            /* More padding for footer */
+            font-size: 15px;
+            margin-top: 50px;
+            /* More space above footer */
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 15px;
+                background-color: #00BCD4;
+                /* Solid cyan background for mobile nav */
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                padding: 12px 20px;
+                /* Larger padding for mobile links */
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                /* Separator for links */
+            }
+
+            nav a:last-child {
+                border-bottom: none;
+            }
+
+            .menu-toggle {
+                display: block;
+                /* Move menu-toggle to the right */
+                order: 1;
+                /* This will make it appear after the logo in flex order */
+                margin-left: auto;
+                /* Pushes it to the far right */
+            }
+
+            .navbar {
+                /* justify-content: space-between; ensures logo is left, toggle is right */
+                justify-content: space-between;
+                align-items: center;
+                /* Keep items vertically centered */
+            }
+
+            .logo {
+                /* Resetting styles that put it in the center or full width */
+                width: auto;
+                /* Allow logo to take natural width */
+                text-align: left;
+                /* Align logo to the left */
+                margin-bottom: 0;
+                /* Remove bottom margin */
+            }
+        }
